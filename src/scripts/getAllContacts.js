@@ -5,10 +5,11 @@ export const getAllContacts = async () => {
   try {
     const data = await fs.readFile(PATH_DB, { encoding: 'utf-8' });
     const allContacts = JSON.parse(data);
-    console.log(allContacts);
     console.log('All contacts show');
+    return allContacts;
   } catch (error) {
     console.log('Get all contacts error:', error);
+    return null;
   }
 };
 

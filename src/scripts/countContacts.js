@@ -6,8 +6,7 @@ export const countContacts = async () => {
     const data = await fs.readFile(PATH_DB, { encoding: 'utf-8' });
     const contacts = JSON.parse(data);
     const contactsLength = contacts.length;
-    console.log(contactsLength);
-    // console.log(JSON.parse(data).length);
+    return contactsLength;
   } catch (error) {
     console.log('Count contacts error:', error);
   }
